@@ -51,7 +51,7 @@ var (
 	// Git SHA1 commit hash of the release (set via linker flags)
 	gitCommit = ""
 	// The app that holds all commands and flags.
-	app = utils.NewApp(gitCommit, "the go-ethereum command line interface")
+	app = utils.NewApp(gitCommit, "BCAChain command line")
 	// flags that configure the node
 	nodeFlags = []cli.Flag{
 		utils.IdentityFlag,
@@ -64,16 +64,16 @@ var (
 		utils.KeyStoreDirFlag,
 		utils.ExternalSignerFlag,
 		utils.NoUSBFlag,
-		utils.DashboardEnabledFlag,
-		utils.DashboardAddrFlag,
-		utils.DashboardPortFlag,
-		utils.DashboardRefreshFlag,
-		utils.EthashCacheDirFlag,
-		utils.EthashCachesInMemoryFlag,
-		utils.EthashCachesOnDiskFlag,
-		utils.EthashDatasetDirFlag,
-		utils.EthashDatasetsInMemoryFlag,
-		utils.EthashDatasetsOnDiskFlag,
+		// utils.DashboardEnabledFlag,
+		// utils.DashboardAddrFlag,
+		// utils.DashboardPortFlag,
+		// utils.DashboardRefreshFlag,
+		// utils.EthashCacheDirFlag,
+		// utils.EthashCachesInMemoryFlag,
+		// utils.EthashCachesOnDiskFlag,
+		// utils.EthashDatasetDirFlag,
+		// utils.EthashDatasetsInMemoryFlag,
+		// utils.EthashDatasetsOnDiskFlag,
 		utils.TxPoolLocalsFlag,
 		utils.TxPoolNoLocalsFlag,
 		utils.TxPoolJournalFlag,
@@ -127,11 +127,11 @@ var (
 		utils.NetrestrictFlag,
 		utils.NodeKeyFileFlag,
 		utils.NodeKeyHexFlag,
-		utils.DeveloperFlag,
-		utils.DeveloperPeriodFlag,
-		utils.TestnetFlag,
-		utils.RinkebyFlag,
-		utils.GoerliFlag,
+		// utils.DeveloperFlag,
+		// utils.DeveloperPeriodFlag,
+		// utils.TestnetFlag,
+		// utils.RinkebyFlag,
+		// utils.GoerliFlag,
 		utils.VMEnableDebugFlag,
 		utils.NetworkIdFlag,
 		utils.ConstantinopleOverrideFlag,
@@ -177,7 +177,7 @@ var (
 	metricsFlags = []cli.Flag{
 		utils.MetricsEnableInfluxDBFlag,
 		utils.MetricsInfluxDBEndpointFlag,
-		utils.MetricsInfluxDBDatabaseFlag,
+		//utils.MetricsInfluxDBDatabaseFlag,
 		utils.MetricsInfluxDBUsernameFlag,
 		utils.MetricsInfluxDBPasswordFlag,
 		utils.MetricsInfluxDBTagsFlag,
@@ -186,34 +186,34 @@ var (
 
 func init() {
 	// Initialize the CLI app and start Geth
-	app.Action = geth
+	app.Action = bcachain
 	app.HideVersion = true // we have a command to print the version
-	app.Copyright = "Copyright 2013-2019 The go-ethereum Authors"
+	app.Copyright = "Copyright 2018-2019 BCAChain"
 	app.Commands = []cli.Command{
 		// See chaincmd.go:
 		initCommand,
 		importCommand,
-		exportCommand,
-		importPreimagesCommand,
-		exportPreimagesCommand,
-		copydbCommand,
+		// exportCommand,
+		// importPreimagesCommand,
+		// exportPreimagesCommand,
+		// copydbCommand,
 		removedbCommand,
 		dumpCommand,
 		// See monitorcmd.go:
 		monitorCommand,
 		// See accountcmd.go:
 		accountCommand,
-		walletCommand,
+		// walletCommand,
 		// See consolecmd.go:
 		consoleCommand,
 		attachCommand,
 		javascriptCommand,
 		// See misccmd.go:
-		makecacheCommand,
-		makedagCommand,
+		// makecacheCommand,
+		// makedagCommand,
 		versionCommand,
 		bugCommand,
-		licenseCommand,
+		// licenseCommand,
 		// See config.go
 		dumpConfigCommand,
 	}
@@ -273,10 +273,10 @@ func main() {
 	}
 }
 
-// geth is the main entry point into the system if no special subcommand is ran.
+// bcachain is the main entry point into the system if no special subcommand is ran.
 // It creates a default node based on the command line arguments and runs it in
 // blocking mode, waiting for it to be shut down.
-func geth(ctx *cli.Context) error {
+func bcachain(ctx *cli.Context) error {
 	if args := ctx.Args(); len(args) > 0 {
 		return fmt.Errorf("invalid command: %q", args[0])
 	}

@@ -33,7 +33,7 @@ import (
 var AppHelpTemplate = `NAME:
    {{.App.Name}} - {{.App.Usage}}
 
-   Copyright 2013-2019 The go-ethereum Authors
+   Copyright 2018-2019 The BCAChain Authors
 
 USAGE:
    {{.App.HelpName}} [options]{{if .App.Commands}} command [command options]{{end}} {{if .App.ArgsUsage}}{{.App.ArgsUsage}}{{else}}[arguments...]{{end}}
@@ -65,7 +65,7 @@ type flagGroup struct {
 // AppHelpFlagGroups is the application flags, grouped by functionality.
 var AppHelpFlagGroups = []flagGroup{
 	{
-		Name: "ETHEREUM",
+		Name: "BCACHAIN",
 		Flags: []cli.Flag{
 			configFileFlag,
 			utils.DataDirFlag,
@@ -73,8 +73,8 @@ var AppHelpFlagGroups = []flagGroup{
 			utils.NoUSBFlag,
 			utils.NetworkIdFlag,
 			utils.TestnetFlag,
-			utils.RinkebyFlag,
-			utils.GoerliFlag,
+			//utils.RinkebyFlag,
+			//utils.GoerliFlag,
 			utils.SyncModeFlag,
 			utils.ExitWhenSyncedFlag,
 			utils.GCModeFlag,
@@ -95,17 +95,17 @@ var AppHelpFlagGroups = []flagGroup{
 			utils.DeveloperPeriodFlag,
 		},
 	},
-	{
-		Name: "ETHASH",
-		Flags: []cli.Flag{
-			utils.EthashCacheDirFlag,
-			utils.EthashCachesInMemoryFlag,
-			utils.EthashCachesOnDiskFlag,
-			utils.EthashDatasetDirFlag,
-			utils.EthashDatasetsInMemoryFlag,
-			utils.EthashDatasetsOnDiskFlag,
-		},
-	},
+	// {
+	// 	Name: "ETHASH",
+	// 	Flags: []cli.Flag{
+	// 		utils.EthashCacheDirFlag,
+	// 		utils.EthashCachesInMemoryFlag,
+	// 		utils.EthashCachesOnDiskFlag,
+	// 		utils.EthashDatasetDirFlag,
+	// 		utils.EthashDatasetsInMemoryFlag,
+	// 		utils.EthashDatasetsOnDiskFlag,
+	// 	},
+	// },
 	//{
 	//	Name: "DASHBOARD",
 	//	Flags: []cli.Flag{
@@ -231,26 +231,26 @@ var AppHelpFlagGroups = []flagGroup{
 			utils.MetricsEnabledFlag,
 			utils.MetricsEnableInfluxDBFlag,
 			utils.MetricsInfluxDBEndpointFlag,
-			utils.MetricsInfluxDBDatabaseFlag,
+			//utils.MetricsInfluxDBDatabaseFlag,
 			utils.MetricsInfluxDBUsernameFlag,
 			utils.MetricsInfluxDBPasswordFlag,
 			utils.MetricsInfluxDBTagsFlag,
 		},
 	},
-	{
-		Name:  "WHISPER (EXPERIMENTAL)",
-		Flags: whisperFlags,
-	},
-	{
-		Name: "DEPRECATED",
-		Flags: []cli.Flag{
-			utils.MinerLegacyThreadsFlag,
-			utils.MinerLegacyGasTargetFlag,
-			utils.MinerLegacyGasPriceFlag,
-			utils.MinerLegacyEtherbaseFlag,
-			utils.MinerLegacyExtraDataFlag,
-		},
-	},
+	// {
+	// 	Name:  "WHISPER (EXPERIMENTAL)",
+	// 	Flags: whisperFlags,
+	// },
+	// {
+	// 	Name: "DEPRECATED",
+	// 	Flags: []cli.Flag{
+	// 		utils.MinerLegacyThreadsFlag,
+	// 		utils.MinerLegacyGasTargetFlag,
+	// 		utils.MinerLegacyGasPriceFlag,
+	// 		utils.MinerLegacyEtherbaseFlag,
+	// 		utils.MinerLegacyExtraDataFlag,
+	// 	},
+	// },
 	{
 		Name: "MISC",
 	},

@@ -25,8 +25,11 @@ import (
 
 // Genesis hashes to enforce below configs on.
 var (
+	// BCAChain Main net hash
 	MainnetGenesisHash = common.HexToHash("0x4c89029345d95f9a1b99ce4e592d8468510c930ff9187e115d0b71e0145ed299")
-	TestnetGenesisHash = common.HexToHash("0x41941023680923e0fe4d74a34bdac8141f2540e3ae90623718e47d66d1ca4a2d")
+
+	// BCAChain Mars Test Net hash
+	TestnetGenesisHash = common.HexToHash("0x6d8ee9e6d6b29fc0101f2dbe7fe835da74829f33a9cd9189001ecf90df203f18")
 	//RinkebyGenesisHash = common.HexToHash("0x6341fd3daf94b748c72ced5a5b26028f2474f5f00d824504e4fa37a75767e177")
 )
 
