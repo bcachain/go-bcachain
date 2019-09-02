@@ -38,7 +38,7 @@ var (
 	MainnetChainConfig = &ChainConfig{
 		ChainID: big.NewInt(51746),
 		PoBC: &PoBCConfig{
-			Period: 15,
+			Period: 5,
 			Epoch:  30000,
 		},
 	}
@@ -90,12 +90,8 @@ var (
 		ByzantiumBlock:      big.NewInt(1035301),
 		ConstantinopleBlock: big.NewInt(3660663),
 		PetersburgBlock:     big.NewInt(9999999), //TODO! Insert Rinkeby block number
-		// Clique: &CliqueConfig{
-		// 	Period: 15,
-		// 	Epoch:  30000,
-		// },
 		PoBC: &PoBCConfig{
-			Period: 15,
+			Period: 5,
 			Epoch:  30000,
 		},
 	}
@@ -159,7 +155,7 @@ var (
 	//
 	// This configuration is intentionally not using keyed fields to force anyone
 	// adding flags to the config to also have to set these fields.
-	AllPoBCProtocolChanges = &ChainConfig{big.NewInt(1337), big.NewInt(0), nil, false, big.NewInt(0), common.Hash{}, big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), nil, nil, &PoBCConfig{Period: 0, Epoch: 30000}}
+	AllPoBCProtocolChanges = &ChainConfig{big.NewInt(1337), big.NewInt(0), nil, false, big.NewInt(0), common.Hash{}, big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), nil, nil, &PoBCConfig{Period: 5, Epoch: 30000}}
 
 	TestChainConfig = &ChainConfig{big.NewInt(1), big.NewInt(0), nil, false, big.NewInt(0), common.Hash{}, big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), nil, new(EthashConfig), nil}
 	TestRules       = TestChainConfig.Rules(new(big.Int))
