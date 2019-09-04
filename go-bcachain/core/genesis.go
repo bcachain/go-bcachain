@@ -318,10 +318,10 @@ func DefaultGenesisBlock() *Genesis {
 	i, _ := new(big.Int).SetString("68000000000000000000000000", 10)
 	return &Genesis{
 		Config:     params.MainnetChainConfig,
-		Nonce:      66,
+		Timestamp:  1492009146,
 		ExtraData:  hexutil.MustDecode("0x000000000000000000000000000000000000000000000000000000000000000014067e1a32c61a50d9e826d3acb3eb1b16b5feccbecb11ed391035bc874a8df66dfd96a435917f720000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"),
 		GasLimit:   16777216,
-		Difficulty: big.NewInt(17179869184),
+		Difficulty: big.NewInt(1),
 		Alloc: map[common.Address]GenesisAccount{
 			common.HexToAddress("0xbecb11ed391035bc874a8df66dfd96a435917f72"): {Balance: i},
 		},
@@ -332,7 +332,7 @@ func DefaultGenesisBlock() *Genesis {
 func DefaultTestnetGenesisBlock() *Genesis {
 	return &Genesis{
 		Config:     params.TestnetChainConfig,
-		Nonce:      66,
+		Nonce:      0,
 		ExtraData:  hexutil.MustDecode("0x3535353535353535353535353535353535353535353535353535353535353535"),
 		GasLimit:   16777216,
 		Difficulty: big.NewInt(1048576),

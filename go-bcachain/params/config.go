@@ -36,7 +36,14 @@ var (
 var (
 	// MainnetChainConfig is the chain parameters to run a node on the main network.
 	MainnetChainConfig = &ChainConfig{
-		ChainID: big.NewInt(51746),
+		ChainID:             big.NewInt(51746),
+		HomesteadBlock:      big.NewInt(1),
+		EIP150Block:         big.NewInt(2),
+		EIP150Hash:          common.HexToHash("0x0000000000000000000000000000000000000000000000000000000000000000"),
+		EIP155Block:         big.NewInt(3),
+		EIP158Block:         big.NewInt(3),
+		ByzantiumBlock:      big.NewInt(4),
+		ConstantinopleBlock: big.NewInt(5),
 		PoBC: &PoBCConfig{
 			Period: 5,
 			Epoch:  30000,
