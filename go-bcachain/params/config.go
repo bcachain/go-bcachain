@@ -1,19 +1,3 @@
-// Copyright 2016 The go-ethereum Authors
-// This file is part of the go-ethereum library.
-//
-// The go-ethereum library is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// The go-ethereum library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
-
 package params
 
 import (
@@ -26,10 +10,10 @@ import (
 // Genesis hashes to enforce below configs on.
 var (
 	// BCAChain Main net hash
-	MainnetGenesisHash = common.HexToHash("0xf7b55e9c0ca7bb59233a7ed2be1ef8bcf19b6dc3307ba28b067c5afb45ec50b9")
+	MainnetGenesisHash = common.HexToHash("0x3ae7e5cd80a89a027db96ebf3300cbbc346f0c33831b3a1f98433faceb5c6f02")
 
 	// BCAChain Mars Test Net hash
-	TestnetGenesisHash = common.HexToHash("0x4c89029345d95f9a1b99ce4e592d8468510c930ff9187e115d0b71e0145ed299")
+	TestnetGenesisHash = common.HexToHash("0xf7b55e9c0ca7bb59233a7ed2be1ef8bcf19b6dc3307ba28b067c5afb45ec50b9")
 	//RinkebyGenesisHash = common.HexToHash("0x6341fd3daf94b748c72ced5a5b26028f2474f5f00d824504e4fa37a75767e177")
 )
 

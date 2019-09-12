@@ -696,7 +696,7 @@ func (ethash *Ethash) APIs(chain consensus.ChainReader) []rpc.API {
 	// to both eth and ethash namespaces.
 	return []rpc.API{
 		{
-			Namespace: "eth",
+			Namespace: "bcac",
 			Version:   "1.0",
 			Service:   &API{ethash},
 			Public:    true,
