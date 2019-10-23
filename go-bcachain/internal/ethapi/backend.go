@@ -22,13 +22,13 @@ import (
 	"math/big"
 
 	"github.com/bcachain/go-bcachain/accounts"
+	"github.com/bcachain/go-bcachain/bcac/downloader"
+	"github.com/bcachain/go-bcachain/bcacdb"
 	"github.com/bcachain/go-bcachain/common"
 	"github.com/bcachain/go-bcachain/core"
 	"github.com/bcachain/go-bcachain/core/state"
 	"github.com/bcachain/go-bcachain/core/types"
 	"github.com/bcachain/go-bcachain/core/vm"
-	"github.com/bcachain/go-bcachain/bcac/downloader"
-	"github.com/bcachain/go-bcachain/bcacdb"
 	"github.com/bcachain/go-bcachain/event"
 	"github.com/bcachain/go-bcachain/params"
 	"github.com/bcachain/go-bcachain/rpc"
@@ -74,6 +74,27 @@ type Backend interface {
 func GetAPIs(apiBackend Backend) []rpc.API {
 	nonceLock := new(AddrLocker)
 	return []rpc.API{
+		{
+			Namespace: "eth",
+			Version:   "1.0",
+			Service:   NewPublicEthereumAPI(apiBackend),
+			Public:    true,
+		}, {
+			Namespace: "eth",
+			Version:   "1.0",
+			Service:   NewPublicBlockChainAPI(apiBackend),
+			Public:    true,
+		}, {
+			Namespace: "eth",
+			Version:   "1.0",
+			Service:   NewPublicTransactionPoolAPI(apiBackend, nonceLock),
+			Public:    true,
+		}, {
+			Namespace: "eth",
+			Version:   "1.0",
+			Service:   NewPublicAccountAPI(apiBackend.AccountManager()),
+			Public:    true,
+		},
 		{
 			Namespace: "bcac",
 			Version:   "1.0",
